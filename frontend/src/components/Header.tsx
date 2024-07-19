@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
-    <div className="bg-blue-800 py-6">
-      <div className="container mx-auto flex justify-between">
-        <span className="text-3xl text-white font-bold tracking-tight">
+    <div className="py-6 bg-blue-800">
+      <div className="container flex justify-between mx-auto">
+        <span className="text-3xl font-bold tracking-tight text-white">
           <Link to="/">HolidaysBooking.com</Link>
         </span>
         <span className="flex space-x-2">
           <Link
             to="/sign-in"
-            className="flex item-center text-blue-600 px-3 py-2 font-bold bg-white hover:bg-gray-100"
+            className="flex px-3 py-1.5 font-bold text-blue-600 bg-white item-center hover:bg-gray-100"
           >
             Sign In
           </Link>

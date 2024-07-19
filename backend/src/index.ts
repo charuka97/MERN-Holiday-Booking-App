@@ -2,9 +2,11 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
+import authRoutes from "./routes/auth";
+import userRoutes from "./routes/users";
 
 //Database connection
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
 // Create express app
 const app = express();
@@ -18,9 +20,9 @@ app.use(express.urlencoded({ extended: true }));
 //Used to handle and provide access to only defined url
 app.use(cors());
 
-app.get("/api/test", async (req: Request, res: Response) => {
-  res.json({ message: "Hello from express endpoint" });
-});
+//user routes
+app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
 
 // start server
 app.listen(7000, () => {
