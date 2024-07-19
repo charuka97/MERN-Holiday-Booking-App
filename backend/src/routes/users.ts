@@ -52,7 +52,7 @@ router.post(
         maxAge: 86400000,
       });
 
-      return res.sendStatus(200);
+      return res.status(200).send({message: "Used registration completed!"});
 
     } catch (error) {
       console.log(error);
