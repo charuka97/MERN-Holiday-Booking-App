@@ -4,12 +4,16 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import authRoutes from "./routes/auth";
 import userRoutes from "./routes/users";
+import cookieParser from "cookie-parser";
 
 //Database connection
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
 // Create express app
 const app = express();
+
+// Use cookie parser for get auth-token when create a user
+app.use(cookieParser());
 
 // convert incoming http request body to json format
 app.use(express.json());
@@ -18,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Used to handle and provide access to only defined url
-app.use(cors());
+app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 
 //user routes
 app.use("/api/auth", authRoutes);
