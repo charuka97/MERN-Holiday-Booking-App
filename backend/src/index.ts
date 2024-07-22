@@ -9,7 +9,7 @@ import cookieParser from "cookie-parser";
 //Database connection
 mongoose
   .connect(process.env.MONGODB_CONNECTION_STRING as string)
-  .then(() => console.log("Connected to database!"));
+  .then(() => console.log("Connected to database!", process.env.MONGODB_CONNECTION_STRING));
 
 // Create express app
 const app = express();
