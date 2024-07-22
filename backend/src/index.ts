@@ -7,7 +7,9 @@ import userRoutes from "./routes/users";
 import cookieParser from "cookie-parser";
 
 //Database connection
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
+mongoose
+  .connect(process.env.MONGODB_CONNECTION_STRING as string)
+  .then(() => console.log("Connected to database!"));
 
 // Create express app
 const app = express();
