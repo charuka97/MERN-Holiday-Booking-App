@@ -47,6 +47,7 @@ const Register = () => {
         <label className="flex-1 text-sm font-bold text-gray-700">
           First Name
           <input
+            type="text"
             className="w-full px-2 py-1 font-normal border border-gray-300 rounded"
             {...register("firstName", {
               required: "First name should be required!",
@@ -61,6 +62,7 @@ const Register = () => {
         <label className="flex-1 text-sm font-bold text-gray-700">
           Last Name
           <input
+            type="text"
             className="w-full px-2 py-1 font-normal border border-gray-300 rounded"
             {...register("lastName", {
               required: "Last name should be required!",
