@@ -27,8 +27,14 @@ router.post(
     body("type").notEmpty().withMessage("Type is required"),
     body("adultCount").notEmpty().withMessage("Adult Count is required"),
     body("childCount").notEmpty().withMessage("Child Count is required"),
-    body("facilities").notEmpty().isArray().withMessage("Facilities is required"),
-    body("pricePerNight").notEmpty().isNumeric().withMessage("Price Per Night is required anf must be number"),
+    body("facilities")
+      .notEmpty()
+      .isArray()
+      .withMessage("Facilities is required"),
+    body("pricePerNight")
+      .notEmpty()
+      .isNumeric()
+      .withMessage("Price Per Night is required anf must be number"),
   ],
   upload.array("imageFiles", 6),
   async (req: Request, res: Response) => {
