@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "react-query";
-import * as apiClient from "../apiConnection/api.client";
+import * as apiClient from "../api.client";
 import { useAppContext } from "../contexts/AppContext";
 
 const SignOutButton = () => {
@@ -23,7 +23,7 @@ const SignOutButton = () => {
   return (
     <button
       onClick={handleClick}
-      className="px-3 font-bold text-blue-600 bg-white hover:bg-gray-300"
+      className="p-1 font-bold text-blue-600 bg-white rounded-md text-md hover:bg-gray-300"
     >
       Sign Out
     </button>
