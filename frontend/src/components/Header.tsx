@@ -22,7 +22,7 @@ const Header = () => {
 
               <Link
                 className="flex items-center px-3 font-bold text-white hover:bg-blue-600"
-                to="/my-bookings"
+                to="/my-hotels"
               >
                 My Hotels
               </Link>
@@ -31,7 +31,7 @@ const Header = () => {
           ) : (
             <Link
               to="/sign-in"
-              className="flex px-3 py-1.5 font-bold text-blue-600 bg-white item-center hover:bg-gray-100"
+              className="flex p-1 font-bold text-blue-600 bg-white rounded-md text-md item-center hover:bg-gray-100"
             >
               Sign In
             </Link>
